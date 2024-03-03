@@ -1,0 +1,1 @@
+window.addEventListener("load",function(){var e,t=document.querySelector(".pre-loading");(e=t).style.transition="opacity 1.5s",e.style.opacity=0,setTimeout(function(){e.remove()},1500)});
