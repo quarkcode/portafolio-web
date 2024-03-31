@@ -46,27 +46,28 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    
-    // Menú
-    document.querySelectorAll('nav.menu li a, .logo a').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            const sectionId = this.getAttribute('href');
-
-            document.querySelectorAll('section').forEach(function(section) {
-                section.classList.remove('active');
-            });
-
-            if(sectionId === '#contact') {
-                formulario.querySelector("#form-content").style.display = "block";
-                formulario.querySelector("#msgThanks").style.display = "none";
-            }
-
-            document.querySelector(sectionId).classList.add('active');
-
-        });
-    });
-
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".container section");
+  
+    const options = {
+      root: null,
+      threshold: 0.5,
+    };
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          sections.forEach(section => {
+            section.classList.remove("active");
+          });
+          entry.target.classList.add("active");
+        }
+      });
+    }, options);
+  
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+});

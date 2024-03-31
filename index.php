@@ -65,7 +65,7 @@
         <div class="container-wrapper">
    
 
-            <section id="intro" class="active">
+            <section id="intro" class=" active">
 
                 <h1>Desarrollo<span>web</span></h1>
 
@@ -77,9 +77,9 @@
             </section>
                
 
-            <section id="me">
+            <section id="me" class="">
                 
-                <h1>Sobre mi</h1>
+                <h2>Sobre mi</h2>
 
                 <div>
                     <div class="image">
@@ -97,9 +97,9 @@
             </section>
 
 
-            <section id="work">
+            <section id="work" class="">
 
-                <h1>Proyectos</h1>
+                <h2>Proyectos</h2>
 
                 <div id="projects-list" class="my-custom-scrollbar">
 
@@ -166,9 +166,9 @@
             </section>
 
 
-            <section id="contact">
+            <section id="contact" class="">
 
-                <h1>Contacto</h1>
+                <h2>Contacto</h2>
 
                 <form action="" method="post">
                     
