@@ -8,10 +8,12 @@ html, body {
 body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 * {
     font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
 .pre-loading {
@@ -434,21 +436,50 @@ header {
     .container {
         background: radial-gradient(closest-side, white 100px, transparent 100%);
 
-        section.intro {
-            
-            h1 {
+        h1 {
+            font-size: 6vw;
+            span {
                 font-size: 9vw;
-                span {
-                    font-size: 12vw;
-                }
+            }
+        }
+
+        h2 {
+            font-size: 6vw;
+            margin: 0 0 10px 0;
+        }
+
+        section#intro {
+
+            h1 {
+                padding: 0 25px;
             }
 
             p {
                 font-size: 16px;
+                padding: 0 25px;
             }
 
-            .cta {
-                font-size: 14px;
+        }
+
+        section#me {
+            position: relative;
+            
+            > div {
+                display: block;
+                .image {
+                    position: absolute;
+                    bottom: 25px;
+                    right: 0;
+                    margin: 0;
+                    .image-container {
+                        width: 24vw;
+                        padding: 2px;
+                        margin: 0;
+                    }
+                }
+                .description {
+                    padding: 0 15px;
+                }
             }
 
         }
@@ -459,39 +490,8 @@ header {
 
 @media (max-width: 480px) {
 
-    header {
-
-        .logo {
-            font-size: 16px;
-            img {
-                max-width: 32px;
-            }
-        }
-
-    }
-
     .container {
         background: radial-gradient(closest-side, white 50px, transparent 100%);
-
-        section.intro {
-            
-            h1 {
-                font-size: 12vw;
-                span {
-                    font-size: 14vw;
-                }
-            }
-
-            p {
-                font-size: 16px;
-            }
-
-            .cta {
-                font-size: 14px;
-            }
-
-        }
-
     }
 
 }
