@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Programador web freelance experto en desarrollo y programación web a medida. Especializado en HTML, CSS, JavaScript y frameworks modernos para transformar desafíos en soluciones digitales personalizadas. Contáctame para llevar tu proyecto al siguiente nivel.">
     <title>QuarkCode - Desarrollo web</title>
-    <link rel="icon" href="img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
+    <link rel="icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" fetchpriority="high" as="image" href="/img/bg.webp" type="image/webp">
+
+    <script src="/js/script.min.js"></script>
 </head>
 <body>
 
@@ -17,13 +23,13 @@
     <header> 
 
         <div class="logo">
-            <a href="#intro"><img src="img/logo.svg" alt="Desarrollo web QuarkCode"> uarkcode</a>
+            <a href="#intro"><img src="img/logo.svg" alt="Desarrollo web QuarkCode" width="42" height="42"> uarkcode</a>
         </div>
 
         <nav class="menu">
             <ul>
                 <li>
-                    <a href="#me">
+                    <a href="#me" title="about me">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-square-rounded" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <path d="M12 13a3 3 0 1 0 0 -6a3 3 0 0 0 0 6z" />
@@ -33,7 +39,7 @@
                     </a>
                 </li>
                 <li style="display:none">
-                    <a href="#work">
+                    <a href="#work" title="my works">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-grid" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <path d="M4 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
@@ -44,7 +50,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#contact">
+                    <a href="#contact" title="contact">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
@@ -82,7 +88,7 @@
                 <div>
                     <div class="image">
                         <div class="image-container">
-                            <img src="/img/me.jpg" alt="Me">
+                            <img src="/img/me.jpg" alt="Me" width="260" height="260">
                         </div>
                     </div>
                     <div class="description">
@@ -95,59 +101,99 @@
             </section>
 
 
-            <section id="work" class="" style="display: none">
+            <? if ($miIP) { ?>
+            <section id="work" class="">
 
                 <h2>Proyectos</h2>
 
                 <div id="projects-list" class="my-custom-scrollbar">
 
-                    <? for($i=0; $i<12; $i++) { ?>
+                    <?php
 
-                    <article id="artcreatiu">
+                        $archivoCSV = 'portfolio.csv';
+                        $projects = array();
+
+                        if (($handle = fopen($archivoCSV, "r")) !== FALSE) {
+                            $encabezados = fgetcsv($handle, 1000, ",");
+
+                            while (($datos = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                                $project = array_combine($encabezados, $datos);
+                                if ($project['active']) 
+                                    $projects[] = $project;
+                            }
+                            fclose($handle);
+                        }
+
+						foreach ($projects as $project) {
+                            $title = $project['id'];
+                            $id = preg_replace('/[^a-z0-9]/', '', strtolower($project['id']));
+                            $year_start = $project['year_start'];
+                            $year_end = $project['year_end'];
+                            $description = $project['description'];
+                            $stacks = explode(",",$project['stack']);
+                            $cms = $project['cms'];
+                            $link = $project['link'];
+                            $code = $project['code'];
+                            $active = $project['active'];
+                            $img = (file_exists("./img/projects/".$id."/".$id."1.jpg")) ? "/img/projects/".$id."/".$id."1.jpg" : null;
+                            
+                    ?>
+
+                    <article id="<?=$id?>">
 
                         <div class="image">
-                            <div class="image-container"><img src="/img/projects/artcreatiu/artcreatiu1.jpg" alt="Artcreatiu e-commerce"></div>
+                            <?php if ($img) { ?>
+                                <div class="image-container">
+                                    <img src="<?=$img?>" alt="<?=$title?>" width="425" height="425">
+                                </div>
+                            <?php } else { ?>
+                                <div class="no-image">
+
+                                </div>
+                            <?php } ?>
                         </div>
 
                         <div class="info">
 
-                            <h3>Artcreatiu</h3>
+                            <h3><?=$title?></h3>
 
                             <div class="details">
 
                                 <ul class="languajes">
-                                    <li>PHP</li>
-                                    <li>Javascript</li>
-                                    <li>SCSS</li>
+                                    <?php foreach ($stacks as $stack) { ?>
+                                        <li><?=$stack?></li>
+                                    <?php } ?>
                                 </ul>
 
-                                <div class="description">
-                                    Desarrollo web tienda online. Mailing, estadisticas de facturacion, stock, pedidos, etc.
-                                </div>
+                                <div class="description"><?=$description?></div>
 
-                                <footer> 
+                                <footer>
                                     
-                                    <a href="#" role="link" target="_blank">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                            <path
-                                                d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5">
-                                            </path>
-                                        </svg>
-                                        Code
-                                    </a> 
+                                    <?php if ($code) { ?>
+                                        <a href="#" role="link" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                <path
+                                                    d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5">
+                                                </path>
+                                            </svg>
+                                            Code
+                                        </a> 
+                                    <?php } ?>
 
-                                    <a href="https://artcreatiu.com/" role="link" target="_blank">
-                                        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                                        </svg>
-                                        Ver
-                                    </a> 
+                                    <?php if ($link) { ?>
+                                        <a href="<?=$link?>" role="link" target="_blank">
+                                            <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                            </svg>
+                                            Ver
+                                        </a> 
+                                    <?php } ?>
 
                                 </footer>
 
@@ -157,11 +203,14 @@
 
                     </article>
 
-                    <? } ?>
+                    <hr>
+
+                    <?php } ?>
 
                 </div>
 
             </section>
+            <? } ?>
 
 
             <section id="contact" class="">

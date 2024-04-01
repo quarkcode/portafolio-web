@@ -343,12 +343,13 @@ header {
 
                     ul.languajes {
                         padding: 0;
+                        max-width: 80%;
 
                         li {
                             display: inline-block;
                             list-style: none;
-                            margin-right: 6px;
-                            font-size: 14px;
+                            margin: 2px;
+                            font-size: 12px;
                             color: #333;
                             border: 1px solid #333;
                             border-radius: 5px;
@@ -392,6 +393,17 @@ header {
                     }
                 }
             }
+
+            hr {
+                border: 0;
+                border-top: 1px dashed #999;
+                margin: 20px auto;
+                max-width: 40%;
+            }
+            hr:last-child {
+                display: none;
+            }
+
         }
     }
 
