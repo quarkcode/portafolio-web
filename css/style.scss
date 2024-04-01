@@ -108,7 +108,6 @@ header {
 
     max-height: 100vh;
     overflow-y: scroll;
-    scroll-snap-type: mandatory;
     scroll-snap-points-y: repeat(3rem);
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
