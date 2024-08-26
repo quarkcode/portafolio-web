@@ -17,7 +17,8 @@
 <body>
 
 <?php
-    $miIP = ($_SERVER['REMOTE_ADDR'] == "37.223.121.218");
+    $miIP = ($_SERVER['REMOTE_ADDR'] == "77.230.163.199");
+    $miIP = false;
 ?>
 
     <header> 
@@ -29,7 +30,7 @@
         <nav class="menu">
             <ul>
                 <li>
-                    <a href="#me" title="about me">
+                    <a href="#me" title="Sobre mi">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-square-rounded" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <path d="M12 13a3 3 0 1 0 0 -6a3 3 0 0 0 0 6z" />
@@ -38,9 +39,18 @@
                         </svg>             
                     </a>
                 </li>
+                <li>
+                    <a href="#servicios" title="Servicios">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-assembly" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M19.875 6.27a2.225 2.225 0 0 1 1.125 1.948v7.284c0 .809 -.443 1.555 -1.158 1.948l-6.75 4.27a2.269 2.269 0 0 1 -2.184 0l-6.75 -4.27a2.225 2.225 0 0 1 -1.158 -1.948v-7.285c0 -.809 .443 -1.554 1.158 -1.947l6.75 -3.98a2.33 2.33 0 0 1 2.25 0l6.75 3.98h-.033z" />
+                            <path d="M15.5 9.422c.312 .18 .503 .515 .5 .876v3.277c0 .364 -.197 .7 -.515 .877l-3 1.922a1 1 0 0 1 -.97 0l-3 -1.922a1 1 0 0 1 -.515 -.876v-3.278c0 -.364 .197 -.7 .514 -.877l3 -1.79c.311 -.174 .69 -.174 1 0l3 1.79h-.014z" />
+                        </svg>          
+                    </a>
+                </li>
                 <li style="display:none">
                     <a href="#work" title="my works">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-grid" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-grid" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <path d="M4 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
                             <path d="M14 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
@@ -50,7 +60,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#contact" title="contact">
+                    <a href="#contact" title="Contacto">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
@@ -96,6 +106,68 @@
                         <p>Mi compromiso con cada proyecto en el que participo es total, siempre con el objetivo de <strong>aportar lo mejor</strong> de mí mismo. Busco constantemente soluciones innovadoras y efectivas, manteniéndome al día con las últimas tecnologías para maximizar la mejora en todos los aspectos posibles.</p>
                         <p>La filosofía de software libre de <strong>Linux ha sido un punto de inflexión en mi carrera</strong>, impulsándome a explorar distintos entornos de desarrollo para aplicaciones web y ampliar mi conocimiento sobre infraestructura y desarrollo web. Este viaje no solo ha enriquecido mi perfil profesional, sino que también ha reforzado mi aprecio por la colaboración y la apertura en la tecnología.</p>
                     </div>
+                </div>
+
+            </section>
+
+
+            <section id="servicios" class="">
+                
+                <h2>Servicios</h2>
+
+                <div>
+
+                    <div id="desarrollo-web">
+                        <h3>Desarrollo Web</h3>
+                        <ul>
+                            <li><strong>Gestión de hosting y dominios:</strong> Administración completa de servidores y dominios para asegurar un entorno web robusto y seguro.</li>
+                            <li><strong>Desarrollo web avanzado:</strong> Creación de sitios web a medida y personalización utilizando cualquier CMS o desarrollando soluciones personalizadas.</li>
+                            <li><strong>Accesibilidad web:</strong> Implementación de prácticas de accesibilidad para garantizar que todos los usuarios puedan interactuar con tu sitio web sin barreras.</li>
+                            <li><strong>Integraciones avanzadas:</strong> Conexión de tu sitio web con APIs o servicios web de terceros para mejorar su funcionalidad.</li>
+                        </ul>
+                    </div>
+
+                    <div id="ecommerce">
+                        <h3>E-commerce</h3>
+                        <ul>
+                            <li><strong>Desarrollo de tiendas online:</strong> Creación integral de tiendas online adaptadas a tus necesidades y objetivos.</li>
+                            <li><strong>Personalización y creación de plantillas:</strong> Diseño y desarrollo de plantillas únicas y a medida para tu tienda online.</li>
+                            <li><strong>Desarrollo de plugins:</strong> Creación de plugins personalizados para optimizar y expandir las capacidades de tu plataforma CMS.</li>
+                            <li><strong>Migraciones y transferencia de bases de datos:</strong> Migración segura y eficiente de tiendas y datos entre diferentes plataformas.</li>
+                            <li><strong>Experiencia en múltiples plataformas:</strong> Especialización en Prestashop, Shopify, WooCommerce y soluciones a medida.</li>
+                        </ul>
+                    </div>
+
+                    <div id="seo">
+                        <h3>Posicionamiento en Buscadores (SEO)</h3>
+                        <ul>
+                            <li><strong>Optimización básica para motores de búsqueda:</strong> Mejora de la visibilidad de tu sitio en internet mediante técnicas SEO fundamentales.</li>
+                            <li><strong>Análisis de palabras clave:</strong> Identificación de términos relevantes para posicionar tu contenido estratégicamente.</li>
+                            <li><strong>Optimización estructural y de contenido:</strong> Mejora de la estructura y el contenido interno del sitio para maximizar el rendimiento en buscadores.</li>
+                            <li><strong>Creación de metadatos estructurados:</strong> Implementación de datos estructurados para mejorar la comprensión de los motores de búsqueda sobre tu contenido.</li>
+                            <li><strong>Informes de seguimiento:</strong> Reportes periódicos para evaluar y ajustar la estrategia de SEO según los resultados obtenidos.</li>
+                        </ul>
+                    </div>
+
+                    <div id="ciberseguridad">
+                        <h3>Ciberseguridad</h3>
+                        <ul>
+                            <li><strong>Protección antimalware y soluciones de seguridad:</strong> Implementación de medidas de seguridad para proteger tu entorno web contra amenazas.</li>
+                            <li><strong>Seguridad en correos electrónicos:</strong> Configuración de firmas DKIM, SPF y otros recursos para asegurar la autenticidad de los correos electrónicos.</li>
+                            <li><strong>Análisis de amenazas y vulnerabilidades:</strong> Detección y solución de problemas de seguridad en tu sitio web.</li>
+                            <li><strong>Actualizaciones de seguridad:</strong> Mantenimiento y actualización constante de las plataformas y entornos web para prevenir brechas de seguridad.</li>
+                        </ul>
+                    </div>
+
+                    <div id="integracion-ia">
+                        <h3>Integraciones de Inteligencia Artificial</h3>
+                        <ul>
+                            <li><strong>Automatización de procesos:</strong> Implementación de soluciones de IA para automatizar y optimizar procesos empresariales.</li>
+                            <li><strong>Integración de APIs de IA:</strong> Conexión de tu sitio web con APIs o servicios de inteligencia artificial para ampliar sus capacidades.</li>
+                            <li><strong>Formación en IA generativa:</strong> Capacitación básica para gestionar y aprovechar la inteligencia artificial generativa en tus proyectos.</li>
+                        </ul>
+                    </div>
+                
                 </div>
 
             </section>
@@ -179,7 +251,6 @@
                                                     d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5">
                                                 </path>
                                             </svg>
-                                            Code
                                         </a> 
                                     <?php } ?>
 
@@ -191,7 +262,6 @@
                                                 <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
                                                 <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
                                             </svg>
-                                            Ver
                                         </a> 
                                     <?php } ?>
 
@@ -202,8 +272,6 @@
                         </div>
 
                     </article>
-
-                    <hr>
 
                     <?php } ?>
 
