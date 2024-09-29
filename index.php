@@ -167,7 +167,18 @@
                             <li><strong>Formación en IA generativa:</strong> Capacitación básica para gestionar y aprovechar la inteligencia artificial generativa en tus proyectos.</li>
                         </ul>
                     </div>
-                
+
+                    <div id="kit-digital">
+                        <h3>Programa Kit Digital - Agente Digitalizador</h3>
+                        <p>Como agente digitalizador, estoy acreditado para gestionar y tramitar las ayudas del <strong>Programa Kit Digital</strong>, destinado a impulsar la digitalización de pymes y autónomos.</p>
+                        <ul>
+                            <li><strong>Asesoramiento:</strong> Te ayudaré a identificar las mejores soluciones tecnológicas para tu negocio.</li>
+                            <li><strong>Tramitación de la ayuda:</strong> Me encargo de gestionar la solicitud del bono digital para tu empresa.</li>
+                            <li><strong>Soluciones:</strong> Ofrezco servicios de Desarrollo Web, E-commerce, Posicionamiento en Buscadores (SEO), Ciberseguridad, e Integraciones de Inteligencia Artificial.</li>
+                        </ul>
+                        <a href="https://www.acelerapyme.gob.es/kit-digital" target="_blank"><img src="/img/logos-kit-digital.png" alt="Kit Digital"></a>
+                    </div>
+                    
                 </div>
 
             </section>
