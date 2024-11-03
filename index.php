@@ -6,7 +6,7 @@
     <meta name="description" content="Programador web freelance experto en desarrollo y programación web a medida. Especializado en HTML, CSS, JavaScript y frameworks modernos para transformar desafíos en soluciones digitales personalizadas. Contáctame para llevar tu proyecto al siguiente nivel.">
     <title>QuarkCode - Desarrollo web</title>
     <link rel="icon" href="/img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css?v=031124">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,11 +15,6 @@
     <script src="/js/script.min.js"></script>
 </head>
 <body>
-
-<?php
-    $miIP = ($_SERVER['REMOTE_ADDR'] == "77.230.163.199");
-    $miIP = false;
-?>
 
     <header> 
 
@@ -184,7 +179,6 @@
             </section>
 
 
-            <? if ($miIP) { ?>
             <section id="work" class="">
 
                 <h2>Proyectos</h2>
@@ -289,7 +283,6 @@
                 </div>
 
             </section>
-            <? } ?>
 
 
             <section id="contact" class="">

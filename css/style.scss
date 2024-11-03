@@ -606,6 +606,34 @@ header {
             padding: 0 0 0 20px;
         }
 
+        section#work {
+            #projects-list {
+                grid-template-columns: repeat(1, 1fr);
+                padding: 0;
+                max-width: 100%;
+                
+                article {
+                    display: block;
+                    .info {
+                        height: auto;
+                        opacity: 1;
+                        position: inherit;
+                        background-color: rgba(0,120,185,0.7);
+                    }
+                    .image {
+                        display: flex;
+                        .image-container {
+                            display: flex;
+                            height: auto;
+                            border: 0;
+                            border-radius: 0;
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
+        }
+
     }
 
 }
